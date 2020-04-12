@@ -1,0 +1,140 @@
+--- 
+title: "The Potato-Peel Cookbook"
+subtitle: "No ads, no stories, just recipes"
+author: "Casey Jelsema"
+date: "Last updated: `r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: jelsema/cookbook
+description: "A no-frills cookbook"
+---
+
+
+```{r , echo=FALSE, message=FALSE, error=FALSE }
+
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, error=FALSE)
+
+library("tidyverse")
+library("flextable")
+
+h1 <- officer::fp_border(width=1.00)
+h2 <- officer::fp_border(width=0.75)
+
+```
+
+
+
+
+# Introduction {#intro}
+
+> **Note:** This is still a work in progress. This note will be removed when all of my "regular" recipes are added. Other recipes will get added over time.
+> 
+> I may also play with the formatting of the book or adding nutrition information.
+> 
+> The "tools" are not always consistently listed. I generally try to list the few major things. Minor things like measuring cups for measuring ingredients, I usually don't bother.
+
+
+This cookbook is mainly for my own use, though I'll probably post the link now and again. 
+
+I'm not a chef by any stretch, so I look up recipes online. But we all know that recipe websites are terrible. They're either riddled with ads, or have a 3-page story about some rando's spiritual experience with chives that one time before getting to the recipe. That's all we're there for: The ingredients and the directions. That's what I'm doing here.
+
+That is to say, I'm usually not the inventor of these recipes. Sometimes I've tweaked them a bit, sometimes not. Usually I'll provide a link to the original source in case you want to read some story about how garlic is friendly but pepper is moody. Chances are you don't want to, because that's stupid. I used to keep recipes I used regularly, or that I liked and wanted to keep around, in a Google Document, but the app would sometimes restart when flipping around tabs. That got annoying, so I decided to write it up in an e-book.
+
+Most if not all of the recipes are dairy-free, due to a household need for this. The recipes will just mention "milk" or "butter", etc, but I'll have a note about the dairy-free alternative.
+
+If you found this, I hope it's useful. If not, I don't really care. Also, hopefully you won't ever read this introduction again, because y'all just want the recipe.
+
+
+
+
+
+
+------------------------------------------------------------
+
+As I get started, the recipe template:
+
+
+
+
+<!----------------------------------------------------------------------
+
+                      NEXT RECIPE
+
+----------------------------------------------------------------------->
+
+
+
+Initial comment
+
+**Source:** [Allrecipes](https://allrecipes.com/recipe/22180/waffles-i/amp/)
+
+
+**Ingredients:**
+
+
+```{r}
+
+tbl <- data.frame(
+  Ingredients = c( "2 cups flour (320 g)", 
+                   "3 tbls sugar (40 g)",
+                   "1/4 - 1 tsp salt (9 g)",
+                   "4 tsp baking powder",
+                   "2 eggs",
+                   "1 3/4 cup milk (400 g)",
+                   "1/2 cup oil",
+                   "1/2 - 1 1/2 tsp vanilla extract"
+   ),
+  Tools = c("Mixing bowl x2", "Whisk", "Measuring cups", "Waffle iron",
+            "Topping", "Butter & Syrup (maple, of course)", "Fried chicken",
+            "Fruits and whipped cream")
+)
+
+
+idx <- which( str_detect(tbl[,2], "Topping" ) )
+
+tbl %>%
+  flextable() %>%
+  theme_zebra() %>%
+  align( part="all", align="left" ) %>%
+  border_remove() %>% autofit() %>%
+  bold( part="body", i=idx, j=2 ) %>%
+  bg( part="header", i=1, j=1:2 , bg="grey85" ) %>%
+  bg( part="body", i=idx, j=2 , bg="grey85" ) %>%
+  border(  part="header", i=1, border.bottom=h1, border.top=h1 ) %>%
+  border(  part="body", i=idx, j=2, border.bottom=h1, border.top=h1 ) %>%
+  border(  part="body", i=nrow(tbl), j=1:2, border.bottom=h1  )
+
+
+
+
+
+```
+
+
+**Preparation:**
+
+
+
+**Variations:**
+
+
+
+**Notes:**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
