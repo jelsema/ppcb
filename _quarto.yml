@@ -1,0 +1,93 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "The Potato-Peel Cookbook"
+  subtitle: "No ads, no stories, just recipes"
+  author: "Casey Jelsema"
+  date: "9/7/2025"
+  favicon: images/general/ppcb_logo.png
+  chapters:
+    - index.qmd
+    - substitutions.qmd
+    - part: "Breakfast Batters"
+      chapters:
+        - chapters/breakfast-batter/dutch-baby.qmd
+        - chapters/breakfast-batter/french-toast.qmd
+        - chapters/breakfast-batter/pancakes.qmd
+        - chapters/breakfast-batter/waffles.qmd
+    - part: "Breakfast Other"
+      chapters:
+        - chapters/breakfast-other/bacon-sandwich.qmd
+        - chapters/breakfast-other/breakfast-scramble.qmd
+        - chapters/breakfast-other/cinnamon-roll-biscuits.qmd
+        - chapters/breakfast-other/huevos-rancheros.qmd
+        - chapters/breakfast-other/quiche.qmd
+        - chapters/breakfast-other/green-chile-chedder-chorizo.qmd
+    - part: "Breakfast Sides"
+      chapters:
+        - chapters/breakfast-sides/biscuits.qmd
+        - chapters/breakfast-sides/home-fries.qmd
+        - chapters/breakfast-sides/sausage-gravy.qmd
+    - part: "Soups & Stews"
+      chapters:
+        - chapters/soups-stews/chicken-tortilla-soup.qmd
+        - chapters/soups-stews/southwest-black-bean-soup.qmd
+    - part: "Pizza"
+      chapters:
+        - chapters/pizza/dough.qmd
+        - chapters/pizza/sauce.qmd
+        - chapters/pizza/garlic-bread.qmd
+    - part: "Appetizers"
+      chapters:
+        - chapters/appetizers/bacon-wrapped-dates.qmd
+        - chapters/appetizers/pimento-cheese.qmd
+    - part: "Sides & Salsas"
+      chapters:
+        - chapters/sides/corn-bread.qmd
+        - chapters/sides/rosemary-wedges.qmd
+        - chapters/sides/fries.qmd
+        - chapters/sides/black-bean-corn-salsa.qmd
+    - part: "Sauces & Dressings"
+      chapters:
+        - chapters/sauces/north-carolina-vinegar-sauce.qmd
+        - chapters/sauces/green-chile-vinaigrette.qmd
+        - chapters/sauces/italian-vinaigrette.qmd
+        - chapters/sauces/southwest-vinaigrette.qmd
+    - part: "Desserts"
+      chapters:
+        - chapters/desserts/avocado-pudding.qmd
+        - chapters/desserts/dairy-free-cool-whip.qmd
+        - chapters/desserts/salted-chocolate-peanut-butter-cups.qmd
+        - chapters/desserts/skillet-cookie.qmd
+    - part: "Breads"
+      chapters:
+        - chapters/bread/bread-bowls.qmd
+        - chapters/bread/focaccia.qmd
+        - chapters/bread/irish-soda-bread.qmd
+        - chapters/bread/pasta-noodles.qmd
+        - chapters/bread/pretzel-rolls.qmd
+    - part: "Sourdough"
+      chapters:
+        - chapters/sourdough/basics.qmd
+format:
+  html:
+    theme: 
+      light: cosmo
+      dark: darkly
+    # toc: true
+    # toc-depth: 2 # Includes levels #, ##
+    # toc-expand: 2
+    # toc-location: left
+  # pdf:
+  #   documentclass: scrreprt
+
+knitr:
+  opts_chunk: 
+    echo: false
+    warning: false
+    message: false
+
+editor: source
+
